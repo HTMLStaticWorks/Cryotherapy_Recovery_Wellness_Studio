@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon | CyroCore</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .waitlist-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 440px;
+            margin: 0 auto;
+        }
+        @media (min-width: 540px) {
+            .waitlist-form {
+                flex-direction: row;
+            }
+            .waitlist-form input {
+                flex: 1;
+            }
+            .waitlist-form button {
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh; background: linear-gradient(rgba(9, 9, 11, 0.9), rgba(9, 9, 11, 0.95)), url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover; color: #fff;">
+
+    <main style="flex-grow: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem;">
+        <div class="container animate-fade-up" style="max-width: 600px;">
+            
+            <div class="brand brand-centered">
+                <img src="assets/images/cyrocore-logo.svg" alt="CyroCore" class="brand-logo">
+            </div>
+
+            <h1 style="color: #fff; margin-bottom: 1rem;">Facility Under Construction</h1>
+            <p class="lead-text" style="color: #94a3b8; margin-bottom: 3rem;">We are finalizing the installation of our clinical-grade modalities. The new standard in biological optimization arrives soon.</p>
+            
+            <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 4rem;">
+                <div>
+                    <div style="font-family: var(--font-heading); font-size: 3rem; font-weight: var(--weight-h2); color: var(--color-accent);">14</div>
+                    <div style="font-size: var(--size-caption); color: #94a3b8; text-transform: uppercase; letter-spacing: 1px;">Days</div>
+                </div>
+                <div style="font-family: var(--font-heading); font-size: 3rem; color: #94a3b8;">:</div>
+                <div>
+                    <div style="font-family: var(--font-heading); font-size: 3rem; font-weight: var(--weight-h2); color: var(--color-accent);">08</div>
+                    <div style="font-size: var(--size-caption); color: #94a3b8; text-transform: uppercase; letter-spacing: 1px;">Hours</div>
+                </div>
+            </div>
+
+            <h3 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.25rem;">Join the Waitlist</h3>
+            <form class="waitlist-form">
+                <input type="email" placeholder="Enter your email address" class="form-control" required style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff; padding: 1rem;">
+                <button type="submit" class="btn btn-primary">Notify Me</button>
+            </form>
+            
+        </div>
+    </main>
+
+</body>
+</html>

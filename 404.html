@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found | CyroCore</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+
+    <header class="header">
+        <div class="container navbar">
+            <a href="index.html" class="brand"><img src="assets/images/cyrocore-logo.svg" alt="CyroCore" class="brand-logo"></a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="membership.html" class="nav-link">Membership Plans</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="icon-btn theme-toggle desktop-only"><i class="ph ph-moon"></i></button>
+                <button class="icon-btn rtl-toggle desktop-only"><i class="ph ph-arrows-left-right"></i></button>
+                <button class="icon-btn hamburger-btn"><i class="ph ph-list"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="drawer-overlay"></div>
+    <div class="drawer">
+        <div class="drawer-header">
+            <a href="index.html" class="brand"><img src="assets/images/cyrocore-logo.svg" alt="CyroCore" class="brand-logo"></a>
+            <button class="icon-btn drawer-close"><i class="ph ph-x"></i></button>
+        </div>
+        <nav class="drawer-links">
+            <a href="index.html" class="drawer-link">Home</a>
+            <a href="services.html" class="drawer-link">Services</a>
+            <a href="membership.html" class="drawer-link">Membership Plans</a>
+            <a href="contact.html" class="drawer-link">Contact</a>
+        </nav>
+        <div class="drawer-actions">
+            <div class="flex-row">
+                <button class="icon-btn theme-toggle"><i class="ph ph-moon"></i></button>
+                <button class="icon-btn rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <main style="flex-grow: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem;">
+        <div class="animate-fade-up">
+            <div style="font-family: var(--font-heading); font-size: 8rem; font-weight: var(--weight-h1); color: var(--color-accent); line-height: 1;">404</div>
+            <h1 style="margin-bottom: 1rem;">Protocol Not Found</h1>
+            <p class="lead-text" style="max-width: 500px; margin: 0 auto 2rem auto;">The requested resource or page could not be located in our system.</p>
+            <a href="index.html" class="btn btn-primary">Return to Base</a>
+        </div>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

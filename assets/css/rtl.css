@@ -1,0 +1,31 @@
+/* ==========================================================================
+   CyroCore - RTL Overrides
+   ========================================================================== */
+
+/* Drawer sliding from left instead of right */
+[dir="rtl"] .drawer {
+    right: auto;
+    left: -100%;
+    transition: left var(--transition-normal) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[dir="rtl"] .drawer.open {
+    left: 0;
+    right: auto;
+}
+
+/* Adjust icons or specific alignments that might not use logical properties */
+[dir="rtl"] .btn i {
+    transform: scaleX(-1); /* Flip icons if needed, though Phosphor might handle some automatically */
+}
+
+/* Ensuring form elements align correctly in RTL */
+[dir="rtl"] .form-control {
+    text-align: right;
+}
+
+/* Any specific structural overrides that margin-inline-start didn't cover */
+[dir="rtl"] .social-auth .btn-social i {
+    margin-right: 0;
+    margin-left: 8px;
+}

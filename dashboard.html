@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyroCore | Member Portal</title>
+    <meta name="description" content="CyroCore member portal — sessions, package balance, recovery log and billing.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="dash-body">
+
+    <!-- ==========================================================
+         Sidebar
+         ========================================================== -->
+    <aside class="dash-sidebar" id="dashSidebar">
+        <a href="index.html" class="dash-brand">
+            <img src="assets/images/cyrocore-logo.svg" alt="CyroCore" class="brand-logo">
+        </a>
+
+        <nav class="dash-nav" id="dashNav" aria-label="Portal sections">
+            <button class="dash-nav-link active" data-target="overview">
+                <i class="ph ph-squares-four"></i> Overview
+            </button>
+            <button class="dash-nav-link" data-target="book">
+                <i class="ph ph-calendar-plus"></i> Book Session
+            </button>
+            <button class="dash-nav-link" data-target="balance">
+                <i class="ph ph-chart-pie-slice"></i> Package Balance
+            </button>
+            <button class="dash-nav-link" data-target="progress">
+                <i class="ph ph-chart-line-up"></i> Recovery Progress
+            </button>
+            <button class="dash-nav-link" data-target="membership">
+                <i class="ph ph-identification-badge"></i> Membership
+            </button>
+            <button class="dash-nav-link" data-target="billing">
+                <i class="ph ph-credit-card"></i> Payments &amp; Billing
+            </button>
+            <button class="dash-nav-link" data-target="profile">
+                <i class="ph ph-user-circle"></i> Profile
+            </button>
+        </nav>
+
+        <div class="dash-sidebar-foot">
+            <a href="index.html" class="dash-logout">
+                <i class="ph ph-sign-out"></i> Logout
+            </a>
+        </div>
+    </aside>
+
+    <div class="dash-overlay" id="dashOverlay"></div>
+
+    <!-- ==========================================================
+         Main column
+         ========================================================== -->
+    <div class="dash-main">
+
+        <header class="dash-topbar">
+            <div class="dash-topbar-start">
+                <button class="icon-btn dash-menu-btn" id="dashMenuBtn" aria-label="Open portal menu" aria-expanded="false" aria-controls="dashSidebar">
+                    <i class="ph ph-list"></i>
+                </button>
+                <a href="index.html" class="dash-brand">
+            <img src="assets/images/cyrocore-logo.svg" alt="CyroCore" class="brand-logo">
+                </a>
+            </div>
+
+            <div class="dash-topbar-actions">
+                <button class="icon-btn theme-toggle" aria-label="Toggle dark mode">
+                    <i class="ph ph-moon"></i>
+                </button>
+                <button class="icon-btn rtl-toggle" aria-label="Toggle text direction">
+                    <i class="ph ph-arrows-left-right"></i>
+                </button>
+                <button class="icon-btn dash-avatar-btn" aria-label="Account">
+                    <i class="ph ph-user"></i>
+                </button>
+            </div>
+        </header>
+
+        <main class="dash-content">
+
+            <!-- ============================== OVERVIEW ============================== -->
+            <section id="overview" class="dash-section active">
+                <h1 class="dash-title">Overview</h1>
+
+                <!-- Welcome banner -->
+                <div class="dash-welcome">
+                    <div>
+                        <span class="dash-eyebrow">Performance Tier · Cycle 3 of 12</span>
+                        <h2>Welcome back, Marcus</h2>
+                        <p>Recovery Lab — you have 2 sessions booked before Friday's training block.</p>
+                    </div>
+                    <div class="dash-welcome-actions">
+                        <span class="dash-pill dash-pill-soft">Phase 2: Adaptation</span>
+                        <button class="dash-pill dash-pill-solid" data-jump="book">Book session</button>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="dash-stats">
+                    <div class="dash-stat">
+                        <div class="dash-stat-label">Days to Cycle Reset</div>
+                        <div class="dash-stat-value">12 <small>days</small></div>
+                    </div>
+                    <div class="dash-stat">
+                        <div class="dash-stat-label">Sessions Used</div>
+                        <div class="dash-stat-value">7 <small>/ 8 this cycle</small></div>
+                    </div>
+                    <div class="dash-stat">
+                        <div class="dash-stat-label">Recovery Load</div>
+                        <div class="dash-stat-value">84% <small>of target</small></div>
+                        <div class="dash-progress"><i style="width: 84%;"></i></div>
+                    </div>
+                </div>
+
+                <!-- Panels -->
+                <div class="dash-panels">
+                    <div class="dash-panel">
+                        <div class="dash-panel-head">
+                            <span class="dash-chip"><i class="ph ph-list-checks"></i></span>
+                            <h3>Next Actions</h3>
+                        </div>
+
+                        <div class="dash-action">
+                            <span class="dash-chip"><i class="ph ph-wind"></i></span>
+                            <div>
+                                <b>Book your compression slot</b>
+                                <span>Two openings left on Thursday afternoon.</span>
+                            </div>
+                        </div>
+                        <div class="dash-action">
+                            <span class="dash-chip"><i class="ph ph-notepad"></i></span>
+                            <div>
+                                <b>Complete Oct 08 recovery log</b>
+                                <span>Rate soreness and sleep quality after your cryo session.</span>
+                            </div>
+                        </div>
+                        <div class="dash-action">
+                            <span class="dash-chip"><i class="ph ph-credit-card"></i></span>
+                            <div>
+                                <b>Confirm payment method</b>
+                                <span>Your card on file expires before the Oct 24 renewal.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dash-panel">
+                        <div class="dash-panel-head">
+                            <span class="dash-chip"><i class="ph ph-chat-circle-text"></i></span>
+                            <h3>Staff Notes</h3>
+                        </div>
+
+                        <div class="dash-quote">
+                            <p>"Your tolerance has improved — we can safely drop the chamber to -140°C on your next session."</p>
+                            <span class="dash-quote-author"><i class="ph ph-user-circle"></i> Dr. Renna Vasquez</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================== BOOK SESSION ============================== -->
+            <section id="book" class="dash-section">
+                <h1 class="dash-title">Book a Protocol</h1>
+
+                <div class="dash-panel" style="max-width: 640px;">
+                    <form>
+                        <div class="form-group">
+                            <label class="form-label" for="bookModality">Select Modality</label>
+                            <select class="form-control" id="bookModality">
+                                <option>Whole-Body Cryotherapy (3 Min)</option>
+                                <option>Compression Therapy (30 Min)</option>
+                                <option>Compression Therapy (60 Min)</option>
+                                <option>Infrared Sauna (45 Min)</option>
+                            </select>
+                        </div>
+                        <div class="dash-grid-2">
+                            <div class="form-group">
+                                <label class="form-label" for="bookDate">Date</label>
+                                <input type="date" class="form-control" id="bookDate">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="bookTime">Time Slot</label>
+                                <select class="form-control" id="bookTime">
+                                    <option>08:00 AM</option>
+                                    <option>09:30 AM</option>
+                                    <option>11:00 AM</option>
+                                    <option>02:00 PM</option>
+                                    <option>04:30 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary mt-4" onclick="alert('Session booked successfully.')">
+                            Confirm Booking <i class="ph ph-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- ============================== PACKAGE BALANCE ============================== -->
+            <section id="balance" class="dash-section">
+                <h1 class="dash-title">Package Balance</h1>
+
+                <div class="dash-grid-2">
+                    <div class="dash-panel">
+                        <div class="dash-panel-head">
+                            <span class="dash-chip"><i class="ph ph-ticket"></i></span>
+                            <h3>General Credits</h3>
+                        </div>
+                        <p class="text-muted" style="margin-bottom: 1.25rem;">Valid for any modality.</p>
+                        <div class="dash-stat-value" style="text-align: start;">5 <small>remaining</small></div>
+                        <div class="dash-progress"><i style="width: 62%;"></i></div>
+                        <p class="caption" style="margin-top: 0.75rem;">Expires: Oct 24, 2024</p>
+                    </div>
+
+                    <div class="dash-panel">
+                        <div class="dash-panel-head">
+                            <span class="dash-chip"><i class="ph ph-arrows-clockwise"></i></span>
+                            <h3>Rollover Credits</h3>
+                        </div>
+                        <p class="text-muted" style="margin-bottom: 1.25rem;">Accrued from last cycle.</p>
+                        <div class="dash-stat-value" style="text-align: start;">1 <small>remaining</small></div>
+                        <div class="dash-progress"><i style="width: 12%;"></i></div>
+                        <p class="caption" style="margin-top: 0.75rem;">Expires: Nov 24, 2024</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================== RECOVERY PROGRESS ============================== -->
+            <section id="progress" class="dash-section">
+                <h1 class="dash-title">Recovery Log</h1>
+
+                <div class="dash-panel" style="margin-bottom: 1.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; border-bottom: 1px solid var(--color-border); padding-bottom: 1rem; margin-bottom: 1rem;">
+                        <h3 style="margin: 0;">Whole-Body Cryotherapy</h3>
+                        <span class="caption">Oct 08, 2024</span>
+                    </div>
+                    <p style="margin: 0;">Duration: 3 minutes at -130°C</p>
+                    <p class="dash-log">Self-report: noticeable reduction in quad DOMS post-marathon block. Sleep quality improved.</p>
+                </div>
+
+                <div class="dash-panel">
+                    <div style="display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; border-bottom: 1px solid var(--color-border); padding-bottom: 1rem; margin-bottom: 1rem;">
+                        <h3 style="margin: 0;">Infrared Sauna</h3>
+                        <span class="caption">Oct 01, 2024</span>
+                    </div>
+                    <p style="margin: 0;">Duration: 45 minutes at 60°C</p>
+                    <p class="dash-log">Self-report: standard baseline maintenance. Heavy sweat, no adverse response.</p>
+                </div>
+            </section>
+
+            <!-- ============================== MEMBERSHIP ============================== -->
+            <section id="membership" class="dash-section">
+                <h1 class="dash-title">Membership Status</h1>
+
+                <div class="dash-panel" style="border-color: var(--color-accent-ring); max-width: 700px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                        <h3 style="margin: 0; color: var(--color-accent);">Performance Tier</h3>
+                        <span class="dash-badge"><i class="ph-fill ph-check-circle"></i> Active</span>
+                    </div>
+
+                    <table class="dash-table" style="margin-top: 1.5rem;">
+                        <tbody>
+                            <tr><td><strong>Billing cycle</strong></td><td>Monthly</td></tr>
+                            <tr><td><strong>Next payment</strong></td><td>Oct 24, 2024</td></tr>
+                            <tr><td><strong>Rate</strong></td><td>$199.00</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div style="display: flex; gap: 0.75rem; margin-top: 2rem; flex-wrap: wrap;">
+                        <a href="membership.html" class="btn btn-primary">Upgrade Plan</a>
+                        <button class="btn btn-outline">Cancel Plan</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================== BILLING ============================== -->
+            <section id="billing" class="dash-section">
+                <h1 class="dash-title">Payments &amp; Billing</h1>
+
+                <div class="dash-panels">
+                    <div class="dash-panel">
+                        <div class="dash-panel-head">
+                            <span class="dash-chip"><i class="ph ph-receipt"></i></span>
+                            <h3>Invoice History</h3>
+                        </div>
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col" style="text-align: end;">Receipt</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Sep 24, 2024</td>
+                                    <td>$199.00</td>
+                                    <td style="text-align: end;"><a href="#" class="dash-download-btn" aria-label="Download September receipt" title="Download receipt"><i class="ph ph-download-simple"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Aug 24, 2024</td>
+                                    <td>$199.00</td>
+                                    <td style="text-align: end;"><a href="#" class="dash-download-btn" aria-label="Download August receipt" title="Download receipt"><i class="ph ph-download-simple"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Jul 24, 2024</td>
+                                    <td>$199.00</td>
+                                    <td style="text-align: end;"><a href="#" class="dash-download-btn" aria-label="Download July receipt" title="Download receipt"><i class="ph ph-download-simple"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="dash-panel">
+                        <div class="dash-panel-head">
+                            <span class="dash-chip"><i class="ph ph-credit-card"></i></span>
+                            <h3>Payment Method</h3>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface-2);">
+                            <i class="ph ph-credit-card" style="font-size: 1.5rem; color: var(--color-accent);"></i>
+                            <div>
+                                <b style="display: block;">Visa ending 4242</b>
+                                <span class="caption">Expires 11 / 2024</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline btn-full mt-4">Update Method</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================== PROFILE ============================== -->
+            <section id="profile" class="dash-section">
+                <h1 class="dash-title">Profile Settings</h1>
+
+                <div class="dash-panel" style="max-width: 640px;">
+                    <form>
+                        <div class="form-group">
+                            <label class="form-label" for="pfName">Full Name</label>
+                            <input type="text" class="form-control" id="pfName" value="Marcus T.">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="pfEmail">Email Address</label>
+                            <input type="email" class="form-control" id="pfEmail" value="marcus@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="pfPhone">Phone Number</label>
+                            <input type="tel" class="form-control" id="pfPhone" value="+1 (555) 123-4567">
+                        </div>
+                        <div class="form-group" style="margin-top: 2rem;">
+                            <label class="form-label" for="pfPass">New Password</label>
+                            <input type="password" class="form-control" id="pfPass" placeholder="Leave blank to keep current">
+                        </div>
+                        <button type="button" class="btn btn-primary mt-4" onclick="alert('Profile updated.')">Save Changes</button>
+                    </form>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

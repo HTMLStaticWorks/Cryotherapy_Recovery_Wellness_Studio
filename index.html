@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyroCore | Recovery & Wellness Studio</title>
+    <meta name="description"
+        content="Experience peak performance and rapid recovery at CyroCore. Offering Whole-Body Cryotherapy, Compression Therapy, and Infrared Sauna.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container navbar">
+            <!-- Logo -->
+            <a href="index.html" class="brand"><img src="assets/images/cyrocore-logo.svg" alt="CyroCore" class="brand-logo"></a>
+
+            <!-- Desktop Nav -->
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="home2.html" class="nav-link">Home 2</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="membership.html" class="nav-link">Membership</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="nav-actions">
+                <button class="icon-btn theme-toggle desktop-only" aria-label="Toggle Dark Mode">
+                    <i class="ph ph-moon"></i>
+                </button>
+                <button class="icon-btn rtl-toggle desktop-only" aria-label="Toggle RTL">
+                    <i class="ph ph-arrows-left-right"></i>
+                </button>
+                <a href="login.html" class="btn btn-outline btn-sm desktop-only">Login</a>
+                <button class="icon-btn hamburger-btn" aria-label="Open Menu">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="drawer-overlay"></div>
+    <div class="drawer">
+        <div class="drawer-header">
+            <a href="index.html" class="brand"><img src="assets/images/cyrocore-logo.svg" alt="CyroCore" class="brand-logo"></a>
+            <button class="icon-btn drawer-close" aria-label="Close Menu">
+                <i class="ph ph-x"></i>
+            </button>
+        </div>
+        <nav class="drawer-links">
+            <a href="index.html" class="drawer-link active">Home</a>
+            <a href="home2.html" class="drawer-link">Home 2</a>
+            <a href="services.html" class="drawer-link">Services</a>
+            <a href="membership.html" class="drawer-link">Membership Plans</a>
+            <a href="blog.html" class="drawer-link">Blog</a>
+            <a href="contact.html" class="drawer-link">Contact</a>
+            <a href="dashboard.html" class="drawer-link">Dashboard</a>
+        </nav>
+        <div class="drawer-actions">
+            <div class="flex-row">
+                <button class="icon-btn theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="ph ph-moon"></i>
+                </button>
+                <button class="icon-btn rtl-toggle" aria-label="Toggle RTL">
+                    <i class="ph ph-arrows-left-right"></i>
+                </button>
+            </div>
+            <a href="login.html" class="btn btn-primary btn-full">Login</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="section"
+            style="padding-top: 170px; min-height: 94vh; display: flex; align-items: center; background: linear-gradient(rgba(5, 8, 15, 0.72), rgba(5, 8, 15, 0.94)), url('assets/images/hero-recovery-chamber.jpg') center/cover fixed; color: #fff;">
+            <div class="container text-center">
+                <div class="animate-fade-up">
+                    <span class="eyebrow eyebrow-light">Clinical Recovery Lab — Est. 2019</span>
+                </div>
+                <div class="animate-fade-up delay-1">
+                    <h1 style="color: #fff; max-width: 15ch; margin: 0 auto 1.5rem auto;">Engineered for <span
+                            class="text-gradient">Peak Recovery</span>.</h1>
+                </div>
+                <p class="lead-text animate-fade-up delay-2"
+                    style="color: #b8c8dd; max-width: 56ch; margin: 0 auto 2.5rem auto;">
+                    Advanced modalities designed to accelerate healing, reduce inflammation, and optimise your human
+                    potential — measured, not guessed.
+                </p>
+                <div class="animate-fade-up delay-3"
+                    style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="membership.html" class="btn btn-primary btn-lg">Explore Memberships <i
+                            class="ph ph-arrow-right"></i></a>
+                    <a href="#simulator" class="btn btn-outline btn-lg"
+                        style="color: #fff; border-color: rgba(255,255,255,0.28);">Try the Simulator</a>
+                </div>
+
+                <!-- Hero stat row -->
+                <div class="animate-fade-up delay-4"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; max-width: 820px; margin: 4.5rem auto 0 auto; padding-top: 2.5rem; border-top: 1px solid rgba(255,255,255,0.12);">
+                    <div>
+                        <div class="stat-value">-130°C</div>
+                        <div class="stat-label" style="color: #8ea4bf;">Chamber Floor</div>
+                    </div>
+                    <div>
+                        <div class="stat-value">41%</div>
+                        <div class="stat-label" style="color: #8ea4bf;">Less Soreness</div>
+                    </div>
+                    <div>
+                        <div class="stat-value">3 min</div>
+                        <div class="stat-label" style="color: #8ea4bf;">Full Protocol</div>
+                    </div>
+                    <div>
+                        <div class="stat-value">12k+</div>
+                        <div class="stat-label" style="color: #8ea4bf;">Sessions Logged</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust marquee -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span class="marquee-item"><i class="ph ph-medal"></i> Olympic Training Partner</span>
+                <span class="marquee-item"><i class="ph ph-shield-check"></i> ISO Certified Chambers</span>
+                <span class="marquee-item"><i class="ph ph-heartbeat"></i> Physician Supervised</span>
+                <span class="marquee-item"><i class="ph ph-barbell"></i> Pro Athlete Trusted</span>
+                <span class="marquee-item"><i class="ph ph-flask"></i> Protocol Backed Research</span>
+                <span class="marquee-item"><i class="ph ph-medal"></i> Olympic Training Partner</span>
+                <span class="marquee-item"><i class="ph ph-shield-check"></i> ISO Certified Chambers</span>
+                <span class="marquee-item"><i class="ph ph-heartbeat"></i> Physician Supervised</span>
+                <span class="marquee-item"><i class="ph ph-barbell"></i> Pro Athlete Trusted</span>
+                <span class="marquee-item"><i class="ph ph-flask"></i> Protocol Backed Research</span>
+            </div>
+        </div>
+
+        <!-- =====================================================
+             INTERACTIVE: Protocol Simulator
+             ===================================================== -->
+        <section class="section section-aurora" id="simulator">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="eyebrow">Interactive</span>
+                    <h2>Build Your Protocol</h2>
+                    <p class="lead-text">Move the controls and watch the physiological response update in real time.
+                        Every reading is modelled on the protocol data we collect in the lab.</p>
+                </div>
+
+                <div class="simulator reveal" data-reveal-delay="1" data-simulator>
+
+                    <!-- Controls -->
+                    <div class="sim-panel">
+                        <div class="sim-tabs" role="tablist" aria-label="Choose a modality">
+                            <button class="sim-tab" role="tab" aria-selected="true" aria-controls="sim-stage-panel"
+                                data-modality="cryo">
+                                <i class="ph ph-snowflake"></i> Cryotherapy
+                            </button>
+                            <button class="sim-tab" role="tab" aria-selected="false" aria-controls="sim-stage-panel"
+                                data-modality="compression">
+                                <i class="ph ph-wind"></i> Compression
+                            </button>
+                            <button class="sim-tab" role="tab" aria-selected="false" aria-controls="sim-stage-panel"
+                                data-modality="infrared">
+                                <i class="ph ph-thermometer-hot"></i> Infrared
+                            </button>
+                        </div>
+
+                        <div class="sim-control">
+                            <div class="sim-control-head">
+                                <label for="sim-temp" id="sim-temp-label">Chamber temperature</label>
+                                <div class="sim-readout"><span id="sim-temp-out">-130</span><small
+                                        id="sim-temp-unit">°C</small></div>
+                            </div>
+                            <input type="range" class="sim-range" id="sim-temp" min="-160" max="-80" value="-130"
+                                aria-label="Chamber temperature">
+                            <div class="sim-scale">
+                                <span id="sim-scale-low">-160°C</span>
+                                <span id="sim-scale-high">-80°C</span>
+                            </div>
+                        </div>
+
+                        <div class="sim-control">
+                            <div class="sim-control-head">
+                                <label for="sim-duration" id="sim-duration-label">Session duration</label>
+                                <div class="sim-readout"><span id="sim-duration-out">3</span><small>min</small></div>
+                            </div>
+                            <input type="range" class="sim-range" id="sim-duration" min="1" max="4" step="0.5" value="3"
+                                aria-label="Session duration">
+                            <div class="sim-scale">
+                                <span>Shortest</span>
+                                <span>Longest</span>
+                            </div>
+                        </div>
+
+                        <div class="sim-metrics">
+                            <div>
+                                <div class="sim-metric-label">
+                                    <span data-bar-title>Vasoconstriction response</span>
+                                    <b data-bar-value>0%</b>
+                                </div>
+                                <div class="sim-bar"><i></i></div>
+                            </div>
+                            <div>
+                                <div class="sim-metric-label">
+                                    <span data-bar-title>Inflammation reduction</span>
+                                    <b data-bar-value>0%</b>
+                                </div>
+                                <div class="sim-bar"><i></i></div>
+                            </div>
+                            <div>
+                                <div class="sim-metric-label">
+                                    <span data-bar-title>Lymphatic clearance</span>
+                                    <b data-bar-value>0%</b>
+                                </div>
+                                <div class="sim-bar"><i></i></div>
+                            </div>
+                        </div>
+
+                        <div class="sim-note">
+                            <i class="ph ph-info"></i>
+                            <span id="sim-note">Below -110°C the cold-shock response engages fully.</span>
+                        </div>
+                    </div>
+
+                    <!-- Live stage -->
+                    <div class="sim-stage" role="tabpanel" id="sim-stage-panel" aria-live="polite">
+                        <div class="sim-stage-top">
+                            <span class="sim-chip"><i class="ph ph-broadcast"></i> <span id="sim-chip-label">Whole-Body
+                                    Cryotherapy</span></span>
+                            <span class="sim-chip">Live model</span>
+                        </div>
+
+                        <div>
+                            <div class="sim-temp-display"><span id="sim-big-temp">-130</span><span
+                                    id="sim-big-unit">°C</span></div>
+                            <p class="sim-stage-caption" id="sim-caption">Standard protocol. The cold-shock response is
+                                fully engaged across the whole body.</p>
+                        </div>
+
+                        <div class="sim-stage-foot">
+                            <div class="sim-stat"><b id="sim-kcal">0</b><span>kcal burned</span></div>
+                            <div class="sim-stat"><b id="sim-norep">0x</b><span>Norepinephrine</span></div>
+                            <div class="sim-stat"><b id="sim-recovery">0h</b><span>To full recovery</span></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Recovery Science Section -->
+        <section class="section section-tinted">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="eyebrow">The Mechanism</span>
+                    <h2>The Science of Cold</h2>
+                    <p class="lead-text">Physiological adaptation triggered by extreme temperature exposure aids in
+                        reducing systemic inflammation and accelerating muscular repair.</p>
+                </div>
+
+                <div class="grid-3">
+                    <div class="card card-media reveal">
+                        <div class="card-media-img">
+                            <img src="assets/images/science-circulation-oxygen.jpg"
+                                alt="Swimmer drawing breath underwater" loading="lazy">
+                        </div>
+                        <div class="card-media-body" style="text-align: center;">
+                            <h3>Circulation &amp; Oxygen</h3>
+                            <p>Vasoconstriction followed by rapid vasodilation flushes toxins and delivers highly
+                                oxygenated blood directly to recovering tissues.</p>
+                        </div>
+                    </div>
+
+                    <div class="card card-media reveal" data-reveal-delay="1">
+                        <div class="card-media-img">
+                            <img src="assets/images/science-inflammation-reduction.jpg" alt="Fractured blue ice sheet"
+                                loading="lazy">
+                        </div>
+                        <div class="card-media-body" style="text-align: center;">
+                            <h3>Inflammation Reduction</h3>
+                            <p>Cold exposure naturally suppresses inflammatory cytokines, mitigating delayed onset
+                                muscle soreness (DOMS) post-exertion.</p>
+                        </div>
+                    </div>
+
+                    <div class="card card-media reveal" data-reveal-delay="2">
+                        <div class="card-media-img">
+                            <img src="assets/images/science-endocrine-response.jpg"
+                                alt="Athlete braced on the floor between efforts" loading="lazy">
+                        </div>
+                        <div class="card-media-body" style="text-align: center;">
+                            <h3>Endocrine Response</h3>
+                            <p>Triggers the release of endorphins and norepinephrine, boosting mood, mental clarity, and
+                                metabolic function.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Grid -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="eyebrow">What We Offer</span>
+                    <h2>Clinical Modalities</h2>
+                    <p class="lead-text">Three distinct pathways to biological optimisation.</p>
+                </div>
+
+                <div class="grid-3">
+                    <div class="card reveal" style="padding: 0; align-items: stretch;">
+                        <img src="assets/images/service-cryotherapy-chamber.jpg" alt="Cryotherapy Chamber"
+                            style="border-radius: 0; width: 100%; height: 220px; object-fit: cover;">
+                        <div style="padding: var(--spacing-4); display: flex; flex-direction: column; flex-grow: 1;">
+                            <h3>Whole-Body Cryotherapy</h3>
+                            <p>3 minutes at -130°C. Total systemic reset targeting inflammation, recovery time, and
+                                energy output.</p>
+                            <a href="services.html" class="btn btn-outline btn-full">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="card reveal" data-reveal-delay="1" style="padding: 0; align-items: stretch;">
+                        <img src="assets/images/service-compression-therapy.jpg" alt="Compression Therapy"
+                            style="border-radius: 0; width: 100%; height: 220px; object-fit: cover;">
+                        <div style="padding: var(--spacing-4); display: flex; flex-direction: column; flex-grow: 1;">
+                            <h3>Compression Therapy</h3>
+                            <p>Dynamic sequential compression driving lymphatic drainage and clearing metabolic waste
+                                from extremities.</p>
+                            <a href="services.html" class="btn btn-outline btn-full">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="card reveal" data-reveal-delay="2" style="padding: 0; align-items: stretch;">
+                        <img src="assets/images/service-infrared-sauna.jpg" alt="Infrared Sauna"
+                            style="border-radius: 0; width: 100%; height: 220px; object-fit: cover;">
+                        <div style="padding: var(--spacing-4); display: flex; flex-direction: column; flex-grow: 1;">
+                            <h3>Infrared Sauna</h3>
+                            <p>Deep tissue penetration using full-spectrum infrared light to induce cellular detox and
+                                accelerate healing.</p>
+                            <a href="services.html" class="btn btn-outline btn-full">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Preview -->
+        <section class="section section-tinted">
+            <div class="container split-grid">
+                <div class="reveal">
+                    <img src="assets/images/about-cyrocore-lab.jpg" alt="CyroCore Lab"
+                        style="width: 100%; border-radius: var(--radius-xl); box-shadow: var(--shadow-lifted);">
+                </div>
+                <div class="reveal" data-reveal-delay="1" style="text-align: center;">
+                    <span class="eyebrow">Our Standard</span>
+                    <h2>The CyroCore Standard</h2>
+                    <p class="lead-text">We bridge the gap between elite athletic recovery and daily human performance.
+                    </p>
+                    <p style="margin-bottom: 2rem; color: var(--color-text-muted);">CyroCore is not a spa. It is a
+                        clinical-grade performance lab designed for athletes, executives, and individuals demanding the
+                        highest biological efficiency. Our protocols are rooted strictly in verifiable recovery science.
+                    </p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+                        <div class="stat-tile"
+                            style="text-align: center; align-items: center; justify-content: center;">
+                            <div class="stat-value">98%</div>
+                            <div class="stat-label">Member Retention</div>
+                        </div>
+                        <div class="stat-tile"
+                            style="text-align: center; align-items: center; justify-content: center;">
+                            <div class="stat-value">6</div>
+                            <div class="stat-label">Clinical Staff</div>
+                        </div>
+                    </div>
+                    <a href="about.html" class="btn btn-primary">Our Methodology <i class="ph ph-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="section section-ink">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="eyebrow eyebrow-light">Member Results</span>
+                    <h2>Performance Proven</h2>
+                    <p class="lead-text">Measurable results for those who demand them.</p>
+                </div>
+
+                <div class="grid-3">
+                    <div class="card card-glass reveal" style="align-items: flex-start;">
+                        <div style="display: flex; gap: 4px; color: var(--color-accent-2); margin-bottom: 1rem;">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i>
+                        </div>
+                        <p style="text-align: left;">"The reduction in DOMS after a brutal training block is undeniable.
+                            CyroCore's protocols are precise and effective."</p>
+                        <div class="author-row" style="width: 100%; border-color: rgba(255,255,255,0.12);">
+                            <img src="assets/images/testimonial-marcus-t.jpg" alt="Marcus T." class="author-avatar"
+                                loading="lazy">
+                            <div><b style="color: #fff;">Marcus T.</b><span>Triathlete</span></div>
+                        </div>
+                    </div>
+                    <div class="card card-glass reveal" data-reveal-delay="1" style="align-items: flex-start;">
+                        <div style="display: flex; gap: 4px; color: var(--color-accent-2); margin-bottom: 1rem;">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i>
+                        </div>
+                        <p style="text-align: left;">"Clinical environment, no fluff. Just pure, science-backed
+                            recovery. The infrared sauna here is vastly superior."</p>
+                        <div class="author-row" style="width: 100%; border-color: rgba(255,255,255,0.12);">
+                            <img src="assets/images/testimonial-elena-r.jpg" alt="Elena R." class="author-avatar"
+                                loading="lazy">
+                            <div><b style="color: #fff;">Elena R.</b><span>Executive</span></div>
+                        </div>
+                    </div>
+                    <div class="card card-glass reveal" data-reveal-delay="2" style="align-items: flex-start;">
+                        <div style="display: flex; gap: 4px; color: var(--color-accent-2); margin-bottom: 1rem;">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i>
+                        </div>
+                        <p style="text-align: left;">"Compression therapy post-marathon cut my recovery time in half.
+                            This is essential for serious output."</p>
+                        <div class="author-row" style="width: 100%; border-color: rgba(255,255,255,0.12);">
+                            <img src="assets/images/testimonial-david-l.jpg" alt="David L." class="author-avatar"
+                                loading="lazy">
+                            <div><b style="color: #fff;">David L.</b><span>Marathoner</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section section-aurora text-center">
+            <div class="container container-narrow reveal">
+                <span class="eyebrow">Get Started</span>
+                <h2>Optimise Your Biology Today</h2>
+                <p class="lead-text" style="margin-bottom: 2.5rem;">Select a tier that matches your performance goals.
+                    No lock-in, cancel any time.</p>
+                <a href="membership.html" class="btn btn-primary btn-lg">View Membership Plans <i
+                        class="ph ph-arrow-right"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="brand" style="margin-bottom: 1rem; display: inline-flex;"><img src="assets/images/cyrocore-logo.svg" alt="CyroCore" class="brand-logo"></a>
+                    <p style="color: var(--color-text-muted);">Clinical-grade recovery and physiological optimisation.
+                        Engineered for peak performance.</p>
+                    <div class="social-links">
+                        <a href="#" class="icon-btn" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                        <a href="#" class="icon-btn" aria-label="X"><i class="ph ph-x-logo"></i></a>
+                        <a href="#" class="icon-btn" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Modalities</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Whole-Body Cryo</a></li>
+                        <li><a href="services.html">Compression</a></li>
+                        <li><a href="services.html">Infrared Sauna</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">The Lab</a></li>
+                        <li><a href="membership.html">Plans</a></li>
+                        <li><a href="blog.html">Science Journal</a></li>
+                        <li><a href="contact.html">Location</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p style="font-size: var(--size-caption); color: var(--color-text-muted); margin-bottom: 1rem;">Get
+                        the latest on recovery science.</p>
+                    <!-- Mailchimp embed code comment -->
+                    <!-- <div id="mc_embed_signup">...</div> -->
+                    <form style="display: flex; gap: 8px;">
+                        <input type="email" placeholder="Your email" class="form-control" required
+                            style="padding: 0.6rem 0.9rem; flex-grow: 1;">
+                        <button type="submit" class="btn btn-primary btn-sm">Join</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CyroCore Recovery Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
