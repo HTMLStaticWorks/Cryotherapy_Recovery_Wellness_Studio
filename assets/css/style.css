@@ -6,6 +6,10 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..1000;1,9..40,400..1000&family=Space+Grotesk:wght@300..700&display=swap');
 
 :root {
+  /* Tells the browser which palette to paint native controls with — without it
+     the date field's calendar glyph and picker stay dark-on-dark in dark mode. */
+  color-scheme: light;
+
   /* --- Surfaces --- */
   --color-bg: #f4f7fb;
   --color-bg-alt: #eaeff7;
@@ -112,6 +116,8 @@
 
 /* --- Dark Mode --- */
 [data-theme="dark"] {
+  color-scheme: dark;
+
   --color-bg: #05080f;
   --color-bg-alt: #080d17;
   --color-surface: #0c1220;
@@ -647,6 +653,29 @@ strong, b { font-weight: var(--weight-bold-inline); }
 
 .form-control::placeholder { color: var(--color-text-faint); }
 
+/* Date/time fields: `color-scheme` above flips the native glyph to light in dark
+   mode — here we only give it a usable hit area and hover state. */
+.form-control::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  padding: 2px;
+  margin-inline-start: 0.25rem;
+  opacity: 0.75;
+  transition: opacity var(--transition-fast);
+}
+
+.form-control::-webkit-calendar-picker-indicator:hover { opacity: 1; }
+
+/* Safari hands date inputs a centred, auto-width box that fights the field */
+input[type="date"].form-control,
+input[type="time"].form-control,
+input[type="datetime-local"].form-control,
+input[type="month"].form-control {
+  -webkit-appearance: none;
+  appearance: none;
+  min-height: 0;
+  text-align: start;
+}
+
 .form-control:focus {
   outline: none;
   border-color: var(--color-accent);
@@ -804,12 +833,20 @@ strong, b { font-weight: var(--weight-bold-inline); }
   border: 1px solid var(--color-border);
   color: var(--color-text-main);
   font-size: 1.15rem;
+  line-height: 1;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  /* As a flex child the button was free to squash into an oval — pin the box
+     so it stays a circle and the glyph keeps its breathing room. */
+  flex: 0 0 auto;
   width: 42px;
   height: 42px;
+  min-width: 42px;
+  min-height: 42px;
+  padding: 0;
+  aspect-ratio: 1;
   border-radius: 50%;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -822,6 +859,13 @@ strong, b { font-weight: var(--weight-bold-inline); }
   border-color: var(--color-accent-ring);
   color: var(--color-accent);
   transform: translateY(-2px);
+}
+
+/* the glyph sits on its own line box so it can't push against the circle */
+.icon-btn i {
+  display: block;
+  line-height: 1;
+  font-size: 1.15rem;
 }
 
 .hamburger-btn { display: none; }
@@ -1477,6 +1521,20 @@ strong, b { font-weight: var(--weight-bold-inline); }
   .nav-actions .desktop-only { display: none; }
   .hamburger-btn { display: inline-flex; }
   .header { background-color: var(--header-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+
+  /* Below this width the bar always carries its own background, so the
+     light-on-transparent treatment no longer applies — a white glyph on the
+     light-theme bar is invisible. Hand the buttons back to the theme colours. */
+  .header:not(.is-scrolled):not(.header-solid) .brand {
+    color: var(--color-text-main);
+  }
+
+  .header:not(.is-scrolled):not(.header-solid) .icon-btn,
+  .header:not(.is-scrolled):not(.header-solid) .btn-outline {
+    color: var(--color-text-main);
+    background-color: var(--color-surface-glass);
+    border-color: var(--color-border);
+  }
 }
 
 @media (max-width: 1024px) {

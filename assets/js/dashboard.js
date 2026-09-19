@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebar = document.getElementById('dashSidebar');
     const overlay = document.getElementById('dashOverlay');
     const menuBtn = document.getElementById('dashMenuBtn');
+    const topbarTitle = document.getElementById('dashTopbarTitle');
 
     /* --- Off-canvas sidebar (below 1024px) --- */
     function setSidebar(open) {
@@ -44,6 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.forEach(n => n.classList.toggle('active', n.dataset.target === target));
         sections.forEach(s => s.classList.remove('active'));
         section.classList.add('active');
+
+        // Keep the topbar label in step with the section on show
+        if (topbarTitle) {
+            const heading = section.querySelector('.dash-title');
+            if (heading) topbarTitle.textContent = heading.textContent.trim();
+        }
 
         // On mobile the drawer covers the content — close it after navigating
         setSidebar(false);

@@ -8,14 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggles = document.querySelectorAll('.theme-toggle');
     const root = document.documentElement;
     
-    // Check local storage or system preference
-    const storedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (storedTheme === 'dark' || (!storedTheme && systemPrefersDark)) {
-        root.setAttribute('data-theme', 'dark');
-        updateThemeIcons('dark');
-    }
+    // preload.js already applied the stored theme before paint — mirror it in the icons
+    updateThemeIcons(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
 
     themeToggles.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -44,13 +38,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- RTL Toggle ---
+    // preload.js applies the stored direction before paint, so the choice carries
+    // across pages instead of resetting to LTR on every navigation.
     const rtlToggles = document.querySelectorAll('.rtl-toggle');
-    
+
+    function updateRtlButtons(dir) {
+        rtlToggles.forEach(btn => {
+            btn.setAttribute('aria-pressed', String(dir === 'rtl'));
+            btn.setAttribute('aria-label', dir === 'rtl' ? 'Switch to LTR' : 'Switch to RTL');
+        });
+    }
+
+    updateRtlButtons(root.getAttribute('dir') === 'rtl' ? 'rtl' : 'ltr');
+
     rtlToggles.forEach(btn => {
         btn.addEventListener('click', () => {
-            const currentDir = root.getAttribute('dir') || 'ltr';
+            const currentDir = root.getAttribute('dir') === 'rtl' ? 'rtl' : 'ltr';
             const newDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
             root.setAttribute('dir', newDir);
+            localStorage.setItem('dir', newDir);
+            updateRtlButtons(newDir);
         });
     });
 
@@ -168,6 +175,28 @@ document.addEventListener('DOMContentLoaded', () => {
         setHeaderState();
         window.addEventListener('scroll', setHeaderState, { passive: true });
     }
+
+
+    /* ==================================================================
+       Back to top — appears once the page is a screenful deep
+       ================================================================== */
+    const backToTop = document.createElement('button');
+    backToTop.type = 'button';
+    backToTop.className = 'back-to-top';
+    backToTop.setAttribute('aria-label', 'Back to top');
+    backToTop.innerHTML = '<i class="ph ph-arrow-up"></i>';
+    document.body.appendChild(backToTop);
+
+    const setBackToTopState = () => {
+        backToTop.classList.toggle('is-visible', window.scrollY > 400);
+    };
+    setBackToTopState();
+    window.addEventListener('scroll', setBackToTopState, { passive: true });
+
+    backToTop.addEventListener('click', () => {
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
 
 
     /* ==================================================================

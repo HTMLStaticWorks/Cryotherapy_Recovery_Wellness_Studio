@@ -29,7 +29,7 @@ body.dash-body::before { opacity: 0.55; }
   border-inline-end: 1px solid var(--color-border);
   display: flex;
   flex-direction: column;
-  z-index: 60;
+  z-index: 1002;
   transition: transform var(--transition-spring);
 }
 
@@ -129,17 +129,25 @@ body.dash-body::before { opacity: 0.55; }
    ========================================================================== */
 .dash-main {
   margin-inline-start: var(--dash-sidebar-w);
+  /* the topbar is taken out of flow, so reserve its height here */
+  padding-block-start: var(--dash-topbar-h);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+/* Fixed rather than sticky: the global `body { overflow-x: hidden }` turns the
+   body into a scroll container, which makes sticky descendants drift on scroll.
+   Pinning to the viewport keeps the bar put on every device. */
 .dash-topbar {
-  position: sticky;
-  top: 0;
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: var(--dash-sidebar-w);
+  inset-inline-end: 0;
   z-index: 50;
   height: var(--dash-topbar-h);
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-2);
@@ -148,6 +156,11 @@ body.dash-body::before { opacity: 0.55; }
   backdrop-filter: blur(18px) saturate(160%);
   -webkit-backdrop-filter: blur(18px) saturate(160%);
   border-block-end: 1px solid var(--color-border);
+}
+
+/* Without backdrop blur the translucent bar lets content read through it */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .dash-topbar { background-color: var(--color-surface); }
 }
 
 .dash-topbar-start {
@@ -162,6 +175,7 @@ body.dash-body::before { opacity: 0.55; }
   align-items: center;
   gap: 0.6rem;
   margin-inline-start: auto;
+  flex-shrink: 0;
 }
 
 .dash-avatar-btn {
@@ -178,6 +192,19 @@ body.dash-body::before { opacity: 0.55; }
   padding-inline: 0;
   border: none;
   font-size: 1.15rem;
+}
+
+/* Keeps the bar from reading as half-empty on wide screens, where the sidebar
+   has already taken the brand and the menu button. */
+.dash-topbar-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: var(--weight-h4);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .dash-menu-btn { display: none; }
@@ -558,7 +585,7 @@ body.dash-body::before { opacity: 0.55; }
 .dash-overlay {
   position: fixed;
   inset: 0;
-  z-index: 55;
+  z-index: 1001;
   background-color: rgba(5, 8, 15, 0.55);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
@@ -581,14 +608,21 @@ body.dash-body::before { opacity: 0.55; }
 
   .dash-main { margin-inline-start: 0; }
 
+  .dash-topbar { inset-inline-start: 0; }
+
   .dash-menu-btn { display: inline-flex; }
 
   .dash-content { max-width: none; }
 }
 
 @media (min-width: 1025px) {
-  /* the sidebar already shows the brand */
+  /* the sidebar already shows the brand — the section title takes its place */
   .dash-topbar .dash-brand { display: none; }
+}
+
+/* below 1025 the brand is back in the bar, so the title would double up */
+@media (max-width: 1024px) {
+  .dash-topbar-title { display: none; }
 }
 
 @media (max-width: 860px) {

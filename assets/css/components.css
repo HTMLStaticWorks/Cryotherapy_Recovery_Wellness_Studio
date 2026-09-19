@@ -397,6 +397,46 @@
   .sim-stage { min-height: 340px; order: -1; }
 }
 
+/* On a phone the display digits are set on a sub-1 line-height, so at the
+   clamped size their ascenders spilled out of the line box and ran into the
+   chips above and the caption below. Give the stage real gaps and let the
+   number sit inside its own box. */
+@media (max-width: 640px) {
+  .sim-stage {
+    min-height: 0;
+    gap: 1rem;
+    padding: 1.25rem 1.1rem;
+  }
+
+  .sim-stage-top {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .sim-chip {
+    font-size: 0.62rem;
+    padding: 0.3rem 0.6rem;
+    letter-spacing: 0.06em;
+  }
+
+  .sim-temp-display {
+    font-size: clamp(2.9rem, 15vw, 4.2rem);
+    line-height: 1.08;
+    margin-block: 0.25rem;
+    padding-block: 0.15rem;
+  }
+
+  .sim-stage-caption {
+    min-height: 0;
+    max-width: none;
+    font-size: 0.88rem;
+    margin-block-start: 0.5rem;
+  }
+
+  .sim-stat b { font-size: 1.15rem; }
+}
+
 @media (max-width: 520px) {
   .sim-tabs { flex-direction: column; border-radius: var(--radius-lg); }
   .sim-tab { border-radius: var(--radius-md); }
@@ -1053,6 +1093,24 @@ img.author-avatar {
 .author-row b { display: block; font-size: 0.92rem; }
 .author-row span { font-size: var(--size-caption); color: var(--color-text-muted); }
 
+.author-row-cta {
+  margin-inline-start: auto;
+  white-space: nowrap;
+}
+
+/* Below the wide desktop layout there is no room for the byline and the link
+   side by side — both were wrapping to three cramped lines. Give the name the
+   full row and drop the CTA underneath it. */
+@media (max-width: 1024px) {
+  .author-row { flex-wrap: wrap; }
+
+  .author-row-cta {
+    margin-inline-start: 0;
+    flex-basis: 100%;
+    padding-block-start: 0.35rem;
+  }
+}
+
 /* Topic chips */
 .topic-rail {
   display: flex;
@@ -1571,4 +1629,65 @@ img.author-avatar {
     line-clamp: none;
     display: block;
   }
+}
+
+/* ==========================================================================
+   Back to top
+   ========================================================================== */
+.back-to-top {
+  position: fixed;
+  inset-block-end: 1.75rem;
+  inset-inline-end: 1.75rem;
+  z-index: 999;
+  inline-size: 46px;
+  block-size: 46px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  background-image: var(--gradient-accent);
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 10px 28px rgba(2, 132, 199, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(14px);
+  transition: opacity var(--transition-normal), transform var(--transition-normal),
+              visibility var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(2, 132, 199, 0.48);
+}
+
+.back-to-top:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* The arrow points up in both directions — never mirror it */
+[dir="rtl"] .back-to-top i { transform: none; }
+
+@media (max-width: 640px) {
+  .back-to-top {
+    inset-block-end: 1.1rem;
+    inset-inline-end: 1.1rem;
+    inline-size: 42px;
+    block-size: 42px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top { transition: opacity 0.2s linear, visibility 0.2s linear; }
+  .back-to-top:hover { transform: none; }
 }
