@@ -673,8 +673,57 @@ body.dash-body::before { opacity: 0.55; }
   }
 }
 
+/* The portal bar carries a menu button plus three actions around the wordmark,
+   so it runs out of room well before the marketing header does. Scoped to the
+   topbar — the other pages' headers keep the full-size logo and buttons. */
+@media (max-width: 640px) {
+  .dash-topbar {
+    --logo-h: 38px;
+    gap: 0.5rem;
+    padding-inline: 0.9rem;
+  }
+
+  .dash-topbar-start {
+    gap: 0.5rem;
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .dash-topbar .dash-brand {
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .dash-topbar .icon-btn {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    font-size: 1rem;
+  }
+
+  .dash-topbar .icon-btn i { font-size: 1rem; }
+
+  .dash-topbar-actions { gap: 0.35rem; }
+}
+
 @media (max-width: 420px) {
-  .dash-topbar { padding-inline: 1rem; }
+  .dash-topbar {
+    --logo-h: 32px;
+    padding-inline: 0.75rem;
+  }
+
+  .dash-topbar .icon-btn {
+    width: 33px;
+    height: 33px;
+    min-width: 33px;
+    min-height: 33px;
+    font-size: 0.95rem;
+  }
+
+  .dash-topbar .icon-btn i { font-size: 0.95rem; }
+
+  .dash-topbar-actions { gap: 0.25rem; }
 }
 
 @media (max-width: 380px) {
