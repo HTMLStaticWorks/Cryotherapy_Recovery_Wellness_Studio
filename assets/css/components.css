@@ -1691,3 +1691,116 @@ img.author-avatar {
   .back-to-top { transition: opacity 0.2s linear, visibility 0.2s linear; }
   .back-to-top:hover { transform: none; }
 }
+
+/* About page "Our Evolution" timeline: hover feedback per milestone */
+.evo-row { cursor: default; }
+
+.evo-text {
+  border-radius: var(--radius-lg);
+  padding-block: var(--spacing-2);
+  transition: background-color var(--transition-normal), box-shadow var(--transition-normal), translate var(--transition-normal);
+}
+
+.evo-text h3 { transition: color var(--transition-fast); }
+
+.evo-dot { transition: scale var(--transition-normal), box-shadow var(--transition-normal), background-color var(--transition-normal); }
+
+.evo-year { transition: scale var(--transition-normal), letter-spacing var(--transition-normal); }
+
+.evo-row:hover .evo-text {
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-lifted);
+  translate: 0 -4px;
+}
+
+.evo-row:hover .evo-text h3 { color: var(--color-accent); }
+
+.evo-row:hover .evo-dot {
+  scale: 1.35;
+  background: var(--color-accent) !important;
+  box-shadow: 0 0 0 6px var(--color-accent-soft);
+}
+
+.evo-row:hover .evo-year { scale: 1.12; letter-spacing: 0.02em; }
+
+@media (prefers-reduced-motion: reduce) {
+  .evo-row:hover .evo-text { translate: none; }
+  .evo-row:hover .evo-dot,
+  .evo-row:hover .evo-year { scale: 1; }
+}
+
+/* Mobile: single-column timeline with the line on the left */
+@media (max-width: 768px) {
+  .evo-line { left: 10px !important; }
+
+  .evo-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding-inline-start: 2.5rem;
+  }
+
+  .evo-dot { left: 10px !important; top: 0.35rem; }
+
+  .evo-year {
+    order: -1;
+    width: 100% !important;
+    text-align: left !important;
+    padding: 0 !important;
+    font-size: 1.25rem !important;
+    margin-block-end: 0.35rem;
+  }
+
+  .evo-text {
+    width: 100% !important;
+    text-align: left !important;
+    padding: var(--spacing-2) !important;
+    margin-inline-start: calc(-1 * var(--spacing-2));
+  }
+
+  .evo-text h3,
+  .evo-text p { text-align: left !important; }
+
+  .evo-row:hover .evo-year { scale: 1; }
+}
+
+/* RTL mobile: mirror the single-side timeline to the right edge */
+@media (max-width: 768px) {
+  [dir="rtl"] .evo-line,
+  [dir="rtl"] .evo-dot {
+    left: auto !important;
+    right: 10px !important;
+    transform: translateX(50%) !important;
+  }
+
+  [dir="rtl"] .evo-year,
+  [dir="rtl"] .evo-text,
+  [dir="rtl"] .evo-text h3,
+  [dir="rtl"] .evo-text p { text-align: right !important; }
+
+  /* English copy keeps its own direction so periods stay at the end */
+  [dir="rtl"] .evo-text h3,
+  [dir="rtl"] .evo-text p { unicode-bidi: plaintext; }
+}
+
+/* About "Clinical, Not Commercial" — stack on mobile with text first */
+@media (max-width: 900px) {
+  .about-intro {
+    grid-template-columns: 1fr !important;
+    gap: var(--spacing-4) !important;
+  }
+
+  .about-intro-media { order: 2; }
+
+  .about-intro h2,
+  .about-intro p { text-align: center !important; }
+
+  .about-intro-media + div { text-align: center; }
+
+  .about-intro div:has(> div > strong) { justify-content: center; text-align: center; }
+}
+
+/* About "Clinical, Not Commercial" text column centred at every width */
+.about-intro-media + div { text-align: center; }
+.about-intro h2,
+.about-intro p { text-align: center !important; }
+.about-intro div:has(> div > strong) { justify-content: center; }

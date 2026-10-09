@@ -8,7 +8,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/components.css?v=3">
     <link rel="stylesheet" href="assets/css/rtl.css">
     <script src="assets/js/preload.js"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -21,6 +21,7 @@
             <nav class="nav-links">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="home2.html" class="nav-link">Home 2</a>
+                <a href="about.html" class="nav-link active">About</a>
                 <a href="services.html" class="nav-link">Services</a>
                 <a href="membership.html" class="nav-link">Membership</a>
                 <a href="blog.html" class="nav-link">Blog</a>
@@ -45,6 +46,7 @@
         <nav class="drawer-links">
             <a href="index.html" class="drawer-link">Home</a>
             <a href="home2.html" class="drawer-link">Home 2</a>
+            <a href="about.html" class="drawer-link active">About</a>
             <a href="services.html" class="drawer-link">Services</a>
             <a href="membership.html" class="drawer-link">Membership Plans</a>
             <a href="blog.html" class="drawer-link">Blog</a>
@@ -62,20 +64,24 @@
 
     <main>
         <!-- About Hero -->
-        <section class="section section-ink" style="padding-top: 150px; padding-bottom: var(--spacing-8);">
-            <div class="container text-center animate-fade-up">
-                <h1 style="color: #fff;">The Methodology</h1>
-                <p class="lead-text" style="max-width: 700px; margin: 0 auto; color: #cbd5e1;">CyroCore was founded on a singular premise: biological optimization should not be reserved solely for professional athletes.</p>
+        <section class="section section-aurora" style="padding-top: 150px; padding-bottom: var(--spacing-12); overflow: hidden;">
+            <div class="container text-center animate-fade-up"
+                style="display: flex; flex-direction: column; align-items: center;">
+                <span class="eyebrow">About Us</span>
+                <h1>The Methodology</h1>
+                <p class="lead-text" style="max-width: 62ch; margin: 0 auto;">CyroCore was founded on a singular
+                    premise: biological optimization should not be reserved solely for professional athletes.</p>
             </div>
         </section>
 
         <!-- Story Section -->
-        <section class="section">
-            <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-                <div class="animate-fade-up">
+        <section class="section" style="padding-top: calc(var(--spacing-16) + 2rem);">
+            <div class="container about-intro" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div class="animate-fade-up about-intro-media">
                     <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Clinical research" style="width: 100%; border-radius: var(--radius-global); box-shadow: var(--shadow-global);">
                 </div>
                 <div class="animate-fade-up delay-1">
+                    <span class="eyebrow">Our Story</span>
                     <h2 style="text-align: left;">Clinical, Not Commercial.</h2>
                     <p style="text-align: left; margin-bottom: 1.5rem;">The wellness industry is saturated with unverified claims and spa-like environments that prioritize comfort over physiological impact. We operate differently.</p>
                     <p style="text-align: left; margin-bottom: 1.5rem;">CyroCore functions as a high-performance lab. Every modality we offer—Whole-Body Cryotherapy, Dynamic Compression, and Full-Spectrum Infrared—has been subjected to rigorous clinical evaluation regarding its effect on inflammation, lymphatic clearing, and metabolic efficiency.</p>
@@ -93,43 +99,113 @@
             </div>
         </section>
 
+        <!-- Why Choose Cryotherapy -->
+        <section class="section section-tinted" id="why-cryotherapy">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="eyebrow">Why Cryotherapy</span>
+                    <h2>Why Choose Cryotherapy?</h2>
+                    <p class="lead-text">Faster, drier and more comfortable than an ice bath, with results you can
+                        feel after a single three-minute session.</p>
+                </div>
+
+                <div class="grid-4">
+                    <div class="card reveal">
+                        <div class="card-icon"><i class="ph ph-timer"></i></div>
+                        <h3>Just 3 Minutes</h3>
+                        <p>A full systemic cold exposure in less time than a warm-up. No changing into wet gear.</p>
+                    </div>
+                    <div class="card reveal" data-reveal-delay="1">
+                        <div class="card-icon"><i class="ph ph-snowflake"></i></div>
+                        <h3>Dry, Not Wet</h3>
+                        <p>Dry air at -130°C chills the skin without soaking deep muscle, so you leave without lasting stiffness.</p>
+                    </div>
+                    <div class="card reveal" data-reveal-delay="2">
+                        <div class="card-icon"><i class="ph ph-heartbeat"></i></div>
+                        <h3>Clinically Supervised</h3>
+                        <p>Every session is pre-screened and monitored by trained staff with real-time vitals.</p>
+                    </div>
+                    <div class="card reveal" data-reveal-delay="3">
+                        <div class="card-icon"><i class="ph ph-lightning"></i></div>
+                        <h3>Train Again Sooner</h3>
+                        <p>Reduced soreness and inflammation mean shorter gaps between hard training days.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="section" id="how-it-works">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="eyebrow">The Process</span>
+                    <h2>How It Works</h2>
+                    <p class="lead-text">From first visit to measurable recovery, in four simple steps.</p>
+                </div>
+
+                <div class="grid-4">
+                    <div class="card reveal">
+                        <div class="card-icon"><i class="ph ph-number-one"></i></div>
+                        <h3>Book &amp; Screen</h3>
+                        <p>Reserve online, then complete a short health screening with our clinical team.</p>
+                    </div>
+                    <div class="card reveal" data-reveal-delay="1">
+                        <div class="card-icon"><i class="ph ph-number-two"></i></div>
+                        <h3>Gear Up</h3>
+                        <p>We provide gloves, socks and slippers. Remove any jewellery and moisture from your skin.</p>
+                    </div>
+                    <div class="card reveal" data-reveal-delay="2">
+                        <div class="card-icon"><i class="ph ph-number-three"></i></div>
+                        <h3>Enter the Chamber</h3>
+                        <p>Two to three minutes at -110°C to -130°C, guided by a technician from start to finish.</p>
+                    </div>
+                    <div class="card reveal" data-reveal-delay="3">
+                        <div class="card-icon"><i class="ph ph-number-four"></i></div>
+                        <h3>Recover &amp; Track</h3>
+                        <p>Warm up naturally, then log each session and how you feel in your member dashboard.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Milestones/Timeline -->
         <section class="section section-tinted">
             <div class="container">
                 <div class="section-header">
+                    <span class="eyebrow">Our Journey</span>
                     <h2>Our Evolution</h2>
                     <p class="lead-text">Milestones in performance recovery.</p>
                 </div>
                 
                 <div style="max-width: 800px; margin: 0 auto; position: relative;">
                     <!-- Line -->
-                    <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background-color: var(--color-accent); transform: translateX(-50%);"></div>
+                    <div class="evo-line" style="position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background-color: var(--color-accent); transform: translateX(-50%);"></div>
                     
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; position: relative;">
-                        <div style="width: 45%; text-align: right; padding-right: 2rem;">
+                    <div class="evo-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; position: relative;">
+                        <div class="evo-text" style="width: 45%; text-align: right; padding-right: 2rem;">
                             <h3 style="margin-bottom: 0.5rem; text-align: right;">Initial Research</h3>
                             <p style="text-align: right;">Began testing cryo protocols with endurance athletes to measure DOMS reduction.</p>
                         </div>
-                        <div style="width: 20px; height: 20px; background: var(--color-primary); border: 4px solid var(--color-accent); border-radius: 50%; z-index: 2; position: absolute; left: 50%; transform: translateX(-50%);"></div>
-                        <div style="width: 45%; font-family: var(--font-heading); font-weight: var(--weight-h3); color: var(--color-accent); font-size: 1.5rem; padding-left: 2rem;">2018</div>
+                        <div class="evo-dot" style="width: 20px; height: 20px; background: var(--color-primary); border: 4px solid var(--color-accent); border-radius: 50%; z-index: 2; position: absolute; left: 50%; transform: translateX(-50%);"></div>
+                        <div class="evo-year" style="width: 45%; font-family: var(--font-heading); font-weight: var(--weight-h3); color: var(--color-accent); font-size: 1.5rem; padding-left: 2rem;">2018</div>
                     </div>
 
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; position: relative;">
-                        <div style="width: 45%; font-family: var(--font-heading); font-weight: var(--weight-h3); color: var(--color-accent); font-size: 1.5rem; text-align: right; padding-right: 2rem;">2020</div>
-                        <div style="width: 20px; height: 20px; background: var(--color-primary); border: 4px solid var(--color-accent); border-radius: 50%; z-index: 2; position: absolute; left: 50%; transform: translateX(-50%);"></div>
-                        <div style="width: 45%; text-align: left; padding-left: 2rem;">
+                    <div class="evo-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; position: relative;">
+                        <div class="evo-year" style="width: 45%; font-family: var(--font-heading); font-weight: var(--weight-h3); color: var(--color-accent); font-size: 1.5rem; text-align: right; padding-right: 2rem;">2020</div>
+                        <div class="evo-dot" style="width: 20px; height: 20px; background: var(--color-primary); border: 4px solid var(--color-accent); border-radius: 50%; z-index: 2; position: absolute; left: 50%; transform: translateX(-50%);"></div>
+                        <div class="evo-text" style="width: 45%; text-align: left; padding-left: 2rem;">
                             <h3 style="margin-bottom: 0.5rem; text-align: left;">Facility Launch</h3>
                             <p style="text-align: left;">Opened the first dedicated CyroCore lab focusing exclusively on tri-modal recovery.</p>
                         </div>
                     </div>
 
-                    <div style="display: flex; justify-content: space-between; align-items: center; position: relative;">
-                        <div style="width: 45%; text-align: right; padding-right: 2rem;">
+                    <div class="evo-row" style="display: flex; justify-content: space-between; align-items: center; position: relative;">
+                        <div class="evo-text" style="width: 45%; text-align: right; padding-right: 2rem;">
                             <h3 style="margin-bottom: 0.5rem; text-align: right;">Protocol Expansion</h3>
                             <p style="text-align: right;">Integrated advanced compression sequencing based on new lymphatic flow data.</p>
                         </div>
-                        <div style="width: 20px; height: 20px; background: var(--color-primary); border: 4px solid var(--color-accent); border-radius: 50%; z-index: 2; position: absolute; left: 50%; transform: translateX(-50%);"></div>
-                        <div style="width: 45%; font-family: var(--font-heading); font-weight: var(--weight-h3); color: var(--color-accent); font-size: 1.5rem; padding-left: 2rem;">2023</div>
+                        <div class="evo-dot" style="width: 20px; height: 20px; background: var(--color-primary); border: 4px solid var(--color-accent); border-radius: 50%; z-index: 2; position: absolute; left: 50%; transform: translateX(-50%);"></div>
+                        <div class="evo-year" style="width: 45%; font-family: var(--font-heading); font-weight: var(--weight-h3); color: var(--color-accent); font-size: 1.5rem; padding-left: 2rem;">2023</div>
                     </div>
                 </div>
             </div>
